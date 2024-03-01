@@ -1,0 +1,31 @@
+﻿@using lezione65z
+@using lezione65z.Controllers
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model List<ViolazioniImportoMaggiore400Model>
+
+<h2>Violazioni con Importo Maggiore di 400 Euro</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Importo</th>
+            <th>Cognome</th>
+            <th>Nome</th>
+            <th>Data Violazione</th>
+            <th>Decurtamento Punti</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var violazioneImportoMaggiore400 in Model)
+        {
+            <tr>
+                <td>@violazioneImportoMaggiore400.Importo</td>
+                <td>@violazioneImportoMaggiore400.Cognome</td>
+                <td>@violazioneImportoMaggiore400.Nome</td>
+                <td>@violazioneImportoMaggiore400.DataViolazione</td>
+                <td>@violazioneImportoMaggiore400.DecurtamentoPunti</td>
+            </tr>
+        }
+    </tbody>
+</table>

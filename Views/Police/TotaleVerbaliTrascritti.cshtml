@@ -1,0 +1,29 @@
+﻿@using lezione65z
+@using lezione65z.Controllers
+
+
+@model List<TotaleVerbaliModel>
+
+<h2>Totale Verbali Trascritti per Trasgressore</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id Anagrafica</th>
+            <th>Cognome</th>
+            <th>Nome</th>
+            <th>Totale Verbali</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var totaleVerbali in Model)
+        {
+            <tr>
+                <td>@totaleVerbali.IdAnagrafica</td>
+                <td>@totaleVerbali.Cognome</td>
+                <td>@totaleVerbali.Nome</td>
+                <td>@totaleVerbali.TotaleVerbali</td>
+            </tr>
+        }
+    </tbody>
+</table>

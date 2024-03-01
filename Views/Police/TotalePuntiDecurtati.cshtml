@@ -1,0 +1,29 @@
+﻿@using lezione65z
+@using lezione65z.Controllers
+
+
+@model List<TotalePuntiModel>
+
+<h2>Totale Punti Decurtati per Trasgressore</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id Anagrafica</th>
+            <th>Cognome</th>
+            <th>Nome</th>
+            <th>Totale Punti Decurtati</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var totalePunti in Model)
+        {
+            <tr>
+                <td>@totalePunti.IdAnagrafica</td>
+                <td>@totalePunti.Cognome</td>
+                <td>@totalePunti.Nome</td>
+                <td>@totalePunti.TotalePuntiDecurtati</td>
+            </tr>
+        }
+    </tbody>
+</table>

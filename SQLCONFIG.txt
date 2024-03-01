@@ -1,0 +1,49 @@
+CREATE TABLE ANAGRAFICA (
+    idanagrafica INT PRIMARY KEY IDENTITY(1,1),
+    Cognome VARCHAR(50),
+    Nome VARCHAR(50),
+    Indirizzo VARCHAR(100),
+    Città VARCHAR(50),
+    CAP VARCHAR(10),
+    Cod_Fisc VARCHAR(16)
+);
+
+
+CREATE TABLE TIPO_VIOLAZIONE (
+    idviolazione INT PRIMARY KEY IDENTITY(1,1),
+    descrizione VARCHAR(100)
+);
+
+
+CREATE TABLE VERBALE (
+    idverbale INT PRIMARY KEY IDENTITY(1,1),
+    DataViolazione DATE,
+    IndirizzoViolazione VARCHAR(100),
+    Nominativo_Agente VARCHAR(50),
+    DataTrascrizioneVerbale DATE,
+    Importo DECIMAL(10, 2),
+    DecurtamentoPunti INT,
+    idanagrafica INT,
+    idviolazione INT,
+    FOREIGN KEY (idanagrafica) REFERENCES ANAGRAFICA(idanagrafica),
+    FOREIGN KEY (idviolazione) REFERENCES TIPO_VIOLAZIONE(idviolazione)
+);
+
+
+
+
+
+-- Piccolo popolamento di tabbelle da sql di partenza
+INSERT INTO ANAGRAFICA (Cognome, Nome, Indirizzo, Città, CAP, Cod_Fisc)
+VALUES ('Rossi', 'Mario', 'Via Roma 123', 'Roma', '00100', 'RSSMRA01A01H123A'),
+       ('Verdi', 'Laura', 'Via Venezia 45', 'Milano', '20100', 'VRDLRA02B02H456B');
+
+INSERT INTO TIPO_VIOLAZIONE (descrizione)
+VALUES ('Eccesso di velocità'),
+       ('Semaforo rosso');
+
+INSERT INTO VERBALE (DataViolazione, IndirizzoViolazione, Nominativo_Agente, DataTrascrizioneVerbale, Importo, DecurtamentoPunti, idanagrafica, idviolazione)
+VALUES ('2023-01-15', 'Via Milano 78', 'Pippo', '2023-01-16', 400.00, 15, 1, 1),
+       ('2023-02-20', 'Via Napoli 22', 'PezzoDi', '2023-02-21', 75.50, 2, 2, 2);
+
+

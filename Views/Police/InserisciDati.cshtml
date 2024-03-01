@@ -1,0 +1,54 @@
+﻿@using lezione65z
+@using lezione65z.Models
+
+
+<h2>Inserisci Dati della Multa</h2>
+
+<form method="post" action="@Url.Action("InserisciDati")">
+    <!-- Campi per l'inserimento dati Anagrafica -->
+    <label class="form-label">Cognome:</label>
+    <input class="form-control" type="text" name="Cognome" required /><br />
+
+    <label class="form-label">Nome:</label>
+    <input class="form-control" type="text" name="Nome" required /><br />
+
+    <label class="form-label">Indirizzo:</label>
+    <input class="form-control" type="text" name="Indirizzo" required /><br />
+
+    <label class="form-label">Città:</label>
+    <input class="form-control" type="text" name="Città" required /><br />
+
+    <label class="form-label">CAP:</label>
+    <input class="form-control" type="text" name="CAP" required /><br />
+
+    <labe class="form-label" l>Codice Fiscale:</labe>
+    <input class="form-control" type="text" name="Cod_Fisc" required /><br />
+
+
+    <!-- Campi per l'inserimento dati Tipo Violazione -->
+    <label class="form-label">Descrizione Violazione:</label>
+    <input class="form-control" type="text" name="Descrizione" required /><br />
+
+
+    <!-- Campi per l'inserimento dati Verbale -->
+    <label class="form-label">Data Violazione:</label>
+    <input class="form-control" type="date" name="DataViolazione" required /><br />
+
+    <label class="form-label">Indirizzo Violazione:</label>
+    <input class="form-control" type="text" name="IndirizzoViolazione" required /><br />
+
+    <label class="form-label">Nominativo Agente:</label>
+    <input class="form-control" type="text" name="Nominativo_Agente" required /><br />
+
+    <label class="form-label">Data Trascrizione Verbale:</label>
+    <input class="form-control" type="date" name="DataTrascrizioneVerbale" required /><br />
+
+    <label class="form-label">Importo:</label>
+    <input class="form-control" type="number" name="Importo" step="0.01" required /><br />
+
+    <label class="form-label">Decurtamento Punti:</label>
+    <input class="form-control" type="number" name="DecurtamentoPunti" required /><br />
+
+    <input type="submit" value="Inserisci" class="btn btn-primary" />
+</form>
+
